@@ -1,0 +1,16 @@
+.main-content {
+  color: rgb(55, 55, 55);
+}
+
+.main-content p {
+  text-align: justify;
+  font-family: "Arial";
+  font-size: 1.25em;
+  line-height: 1.6;
+}
+
+.main-content h1 {
+  text-align: center;
+  font-family: "Noto Serif", "Droid Sans", "DejaVu Sans", "Helvetica";
+  font-weight: bold;
+}
