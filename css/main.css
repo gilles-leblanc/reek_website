@@ -1,5 +1,26 @@
-.main-content {
+@font-face {
+  font-family: NotoSerif;
+  src: url("../fonts/NotoSerif-Bold.ttf");
+}
+
+.main-container {
   color: rgb(55, 55, 55);
+}
+
+.page-title {
+  text-align: center;
+}
+
+.page-title h1 {
+  font-size: 3.2em;
+  margin-bottom: 0.18em;
+  font-family: NotoSerif, "Noto Serif", "DejaVu Sans", "Helvetica";
+}
+
+.page-title h2 {
+  margin-top: 0em;
+  font-size: 1.3em;
+  font-family: "Arial";
 }
 
 .main-content p {
@@ -11,6 +32,9 @@
 
 .main-content h1 {
   text-align: center;
-  font-family: "Noto Serif", "Droid Sans", "DejaVu Sans", "Helvetica";
+  font-family: NotoSerif, "Noto Serif", "DejaVu Sans", "Helvetica";
   font-weight: bold;
+  margin-top: 1.4em;
+  margin-bottom: 1.4em;
+  font-size: 2.2em;
 }
