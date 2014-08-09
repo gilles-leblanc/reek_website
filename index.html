@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="Reek, code smell detection for Ruby">
+        <meta name="description" content="reek, code smell detection for Ruby">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Reek</title>
+        <title>reek</title>
 
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
@@ -22,27 +22,72 @@
 
             <div class="main-container pure-u-1 pure-u-md-1-2">
                 <div class="page-title">
-                    <h1>Reek</h1>
-                    <!-- <h2>RUBY CODE SMELL DETECTOR</h2> -->
+                    <h1>reek</h1>
+                    <h3>code smell detection for Ruby</h3>
                 </div>
 
                 <div class="main-content">
-                    <h1>Description</h1>
+                    <h1>What is it</h1>
                     <p>
                     Reek is a tool that will parse your Ruby source code and generate a list of code smells.
-                    These warnings will XXXXXXXX to refactor your program. Reek will report XXXXXXX and XXXXXXXX.
+                    These warnings will help guide you in refactoring to cleaner code.
                     </p>
 
-                    <h1>Usage</h1>
+                    <h1>Getting started</h1>
                     <p>
-                    To use Reek... ...
+                    The first step is to get reek. Install it like this:
+                    </p>
+                    <code>gem install reek</code>
+                    <p>
+                    And run it like this to scan the current directory you're in:
+                    </p>
+                    <code>reek .</code>
+                    <p>
+                    You can also check a specific file:
+                    </p>
+                    <code>reek demo.rb</code>
+                    <p>
+                    Now you can add reek to your rake tasks likewise:
+                    </p>
+                    <code>
+                        require 'reek/rake/task'<br>
+                        <br>
+                        Reek::Rake::Task.new(:reek) do |t|<br>
+                        &nbsp;&nbsp;t.fail_on_error = false<br>
+                        end
+                    </code>
+                    <p>
+                    Great. Now you can simply call:
+                    </p>
+                    <code>rake reek</code>
+                    <p>
+                    Or insert the task into your build process.
+                    </p>
+                    <p>
+                    You can also add a <em>config.reek</em> file to override default behavior. Here a an example:
+                    </p>
+                    <code>
+                        ---<br>
+                        UncommunicativeVariableName:<br>
+                        &nbsp;&nbsp;enabled: true<br>
+                        &nbsp;&nbsp;reject:<br>
+                        &nbsp;&nbsp;- !ruby/regexp p;^.$/<br>
+                        &nbsp;&nbsp;- !ruby/regexp /[0-9]$/<br>
+                    </code>
+                    <p>
+                    There, you're all set!
+                    </p>
+
+                    <h1>More</h1>
+                    <p>
+                    You can find more information on reek on our <a href="https://github.com/troessner/reek">GitHub page</a>.
                     </p>
                 </div>
             </div>
 
             <div class="pure-u-1 pure-u-md-1-4"></div>
 
-            <div class="pure-u-1">
+            <div class="pure-u-1 footer">
                 <img class="pure-img" alt="image showing reek output" src="banner2.png">
             </div>
         </div>
