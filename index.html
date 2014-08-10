@@ -35,7 +35,7 @@
 
                     <h1>Getting started</h1>
                     <p>
-                    The first step is to get reek. Install it like this:
+                    It's easy to start using reek in your current projects. The first step is to get reek. Install it like this:
                     </p>
                     <code>gem install reek</code>
                     <p>
@@ -45,15 +45,16 @@
                     <p>
                     You can also check a specific file:
                     </p>
-                    <code>reek demo.rb</code>
+                    <code>reek specific_file.rb</code>
                     <p>
-                    Now you can add reek to your rake tasks likewise:
+                    Now you know how to use reek. You can also add reek to your rake tasks likewise:
                     </p>
                     <code>
                         require 'reek/rake/task'<br>
                         <br>
                         Reek::Rake::Task.new(:reek) do |t|<br>
                         &nbsp;&nbsp;t.fail_on_error = false<br>
+                        &nbsp;&nbsp;t.source_files = *<br>
                         end
                     </code>
                     <p>
@@ -61,19 +62,20 @@
                     </p>
                     <code>rake reek</code>
                     <p>
-                    Or insert the task into your build process.
+                    Or insert the task into your existing build process.
                     </p>
                     <p>
-                    You can also add a <em>config.reek</em> file to override default behavior. Here a an example:
+                    Optionally you could add a <em>config.reek</em> file to override default behavior. Here a an example:
                     </p>
                     <code>
                         ---<br>
-                        UncommunicativeVariableName:<br>
+                        FeatureEnvy:<br>
+                        &nbsp;&nbsp;enabled: false<br>
+                        <br>
+                        TooManyStatements:
                         &nbsp;&nbsp;enabled: true<br>
-                        &nbsp;&nbsp;reject:<br>
-                        &nbsp;&nbsp;- !ruby/regexp p;^.$/<br>
-                        &nbsp;&nbsp;- !ruby/regexp /[0-9]$/<br>
-                    </code>
+                        &nbsp;&nbsp;max_statements: 10<br>
+                   </code>
                     <p>
                     There, you're all set!
                     </p>
